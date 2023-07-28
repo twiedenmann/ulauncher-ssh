@@ -1,3 +1,9 @@
+This is a fork of the nice working extension from https://github.com/jyvern/ulauncher-ssh (who forked https://github.com/jetbug123/ulauncher-ssh).
+Differences are
+* Adding an additional parameter for the terminal command to start MATE Terminal with a custom profile (--profile=YOUR_PROFILE_NAME)
+
+# Original README content
+
 A [Ulauncher](https://ulauncher.io) extension to start ssh connections.
 
 ![extension screenshot](https://imgur.com/glgIVgM.png)
