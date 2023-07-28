@@ -81,7 +81,7 @@ class SshExtension(Extension):
         cmd = self.terminal_cmd.replace("%SHELL", shell).replace("%CONN", addr)
 
         if self.terminal:
-            subprocess.Popen([self.terminal, self.terminal_arg, cmd], cwd=home)
+            subprocess.Popen([self.terminal, self.terminal_option, self.terminal_arg, cmd], cwd=home)
 
 class ItemEnterEventListener(EventListener):
 
@@ -95,6 +95,8 @@ class PreferencesUpdateEventListener(EventListener):
 
         if event.id == "ssh_launcher_terminal":
             extension.terminal = event.new_value
+        elif event.id == "ssh_launcher_terminal_option":
+            extension.terminal_option = event.new_value
         elif event.id == "ssh_launcher_terminal_arg":
             extension.terminal_arg = event.new_value
         elif event.id == "ssh_launcher_terminal_cmd":
@@ -106,6 +108,7 @@ class PreferencesEventListener(EventListener):
 
     def on_event(self, event, extension):
         extension.terminal = event.preferences["ssh_launcher_terminal"]
+        extension.terminal_option = event.preferences["ssh_launcher_terminal_option"]
         extension.terminal_arg = event.preferences["ssh_launcher_terminal_arg"]
         extension.terminal_cmd = event.preferences["ssh_launcher_terminal_cmd"]
         extension.use_known_hosts = event.preferences["ssh_launcher_use_known_hosts"]

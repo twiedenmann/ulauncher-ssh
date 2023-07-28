@@ -2,7 +2,7 @@
   "required_api_version": "^2.0.0",
   "name": "SSH Launcher",
   "description": "Launch SSH connections.",
-  "developer_name": "Jonas Bendlin",
+  "developer_name": "Timo Wiedenmann (forked from Jonas Bendlin)",
   "icon": "images/icon.png",
   "options": {
 	"query_debounce": 0.1
@@ -22,6 +22,14 @@
 		"description": "The Terminal to launch the connections in.",
 		"default_value": "xterm"
 	},
+	{
+		"id": "ssh_launcher_terminal_option",
+		"type": "input",
+		"name": "Terminal option",
+		"description": "Terminal option, e.g. '--profile=YOUR_TERMINAL_PROFILE' (no spaces allowed).",
+		"default_value": ""
+	},
+
 	{
 		"id": "ssh_launcher_terminal_arg",
 		"type": "input",
